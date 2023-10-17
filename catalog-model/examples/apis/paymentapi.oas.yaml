@@ -1,0 +1,54 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: PaymentService API
+  description: API for processing transactions and handling payments.
+paths:
+  /transactions:
+    post:
+      summary: Create a new transaction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                amount:
+                  type: number
+                  description: Amount to be transacted.
+                currency:
+                  type: string
+                  description: Currency for the transaction.
+      responses:
+        '200':
+          description: Transaction successfully processed.
+        '400':
+          description: Invalid input.
+  /transactions/{transactionId}:
+    get:
+      summary: Retrieve details of a specific transaction
+      parameters:
+        - name: transactionId
+          in: path
+          required: true
+          description: Unique ID of the transaction.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Transaction details.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  transactionId:
+                    type: string
+                  amount:
+                    type: number
+                  currency:
+                    type: string
+        '404':
+          description: Transaction not found.
+

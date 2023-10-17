@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: orders-api
+  description: The Order Service API to handle product orders.
+  tags:
+    - order
+    - product
+  links:
+    - url: https://github.com/fictive-org/orderservice
+      title: GitHub Repo
+      icon: github
+    - url: https://github.com/fictive-org/orderservice/blob/master/src/main/resources/orderapi.oas.yaml
+      title: API Spec
+      icon: code
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: team-order
+  definition:
+    $text: ./orderapi.oas.yaml

@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: paymentservice
+  description: |
+    [PaymentService](http://paymentservice.example.com) handles all transactions and payment processing.
+    - Secure Transactions
+    - Multiple Payment Methods
+  links:
+    - url: https://github.com/fictive-org/paymentservice
+      title: GitHub Repo
+      icon: github
+spec:
+  type: service
+  lifecycle: experimental
+  owner: team-payment
+  providesApis:
+    - payments-api
+  dependsOn:
+    - resource: orders-payments-db
+    - resource: azure-ad-b2c-auth

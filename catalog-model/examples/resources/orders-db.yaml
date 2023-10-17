@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: orders-payments-db
+  description: Database storing both orders and payments details.
+spec:
+  type: database
+  owner: team-database
+  system: ecommerce-system

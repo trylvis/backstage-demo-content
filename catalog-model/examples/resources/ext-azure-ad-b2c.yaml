@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: azure-ad-b2c-auth
+  description: Provides authentication through Azure AD B2C.
+spec:
+  type: authentication
+  owner: team-security
+  system: authentication-system

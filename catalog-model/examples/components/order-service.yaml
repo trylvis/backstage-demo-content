@@ -1,0 +1,22 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: orderservice
+  description: |
+    [OrderService](http://orderservice.example.com) manages all product orders and integrations with PaymentService.
+    - Order Management
+    - Payment Integration
+  links:
+    - url: https://github.com/fictive-org/orderservice
+      title: GitHub Repo
+      icon: github
+spec:
+  type: service
+  lifecycle: experimental
+  owner: team-order
+  providesApis:
+    - orders-api
+  dependsOn:
+    - resource: orders-payments-db
+    - resource: azure-ad-b2c-auth
+    - api: payments-api
